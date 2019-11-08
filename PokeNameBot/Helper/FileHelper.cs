@@ -33,13 +33,20 @@ namespace PokeNameBot.Helper
 
     /// <summary>
     /// Gets the bot key from the given path.
-    /// Make sure to store your key in an existing file, before calling this method.    
+    /// Make sure to store your key in an existing file, before calling this method. 
     /// </summary>
     /// <param name="path">The path.</param>
     /// <returns></returns>
     internal static string LoadBotKey(string path)
     {
-      return File.ReadAllText(path);
+      try
+      {
+        return File.ReadAllText(path);
+      }
+      catch (System.Exception ex)
+      {
+        throw new System.Exception($"Bot key file Missing.\n Please make sure to place a file with valid telegram bot key in the Data folder.\n {ex.Message}");
+      }
     }
   }
 }
