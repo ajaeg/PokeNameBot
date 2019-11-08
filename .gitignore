@@ -3,3 +3,8 @@
 ################################################################################
 
 /PokeNameBot/Data/botkey.txt
+/.vs
+/PokeNameBot/.vs/PokeNameBot
+/PokeNameBot/bin/Debug/netcoreapp3.0
+/PokeNameBot/obj
+/PokeNameBot/Data/botkey.txt
