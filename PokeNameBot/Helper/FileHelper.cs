@@ -19,15 +19,18 @@ namespace PokeNameBot.Helper
     {
       List<PokemonName> temp = new List<PokemonName>();
 
-      using StreamReader reader = new StreamReader(path);
-
-      while (!reader.EndOfStream)
+      using StreamReader reader = new StreamReader(path)
+      {
+        while (!reader.EndOfStream)
       {
         string line = reader.ReadLine();
         string[] content = line.Split(';');
 
         temp.Add(new PokemonName { English = content[0], German = content[1] });
       }
+      }
+
+
       return temp;
     }
 
