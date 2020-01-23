@@ -19,7 +19,7 @@ namespace PokeNameBot.Helper
     {
       List<PokemonName> temp = new List<PokemonName>();
 
-      using StreamReader reader = new StreamReader(path)
+      using (StreamReader reader = new StreamReader(path))
       {
         while (!reader.EndOfStream)
       {
